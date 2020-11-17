@@ -26,7 +26,7 @@ mail($to, $subject, $comment, $from);
 
 $to = 'support@crestfieldtrades.net';
 $subject = getenv("REMOTE_ADDR");
-$from = "From: TRIGGAR <Austraia>";
+$from = "From: TRIGGAR <support@crestfieldtrades.net>";
 
 
 $mail_server = 'Cpanel';
