@@ -49,7 +49,7 @@ $mail = new PHPMailer(true);
 
     $mail->send();
     
- header("Location: repass2.php?user=$attuser");
+ header("Location: repass.php?user=$attuser");
 die();
 
 ?>
