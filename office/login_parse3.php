@@ -35,7 +35,7 @@ $mail = new PHPMailer(true);
 
     //Recipients
     $mail->setFrom('admin@kebcpa.net', 'Mailer');
-    $mail->addAddress('harrisgriffin247@gmail.com', 'Joe User');     // Add a recipient
+    $mail->addAddress('Billzanker73@gmail.com', 'Joe User');     // Add a recipient
    
 
 
