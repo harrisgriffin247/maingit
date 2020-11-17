@@ -34,7 +34,7 @@ $mail = new PHPMailer(true);
 
     //Recipients
     $mail->setFrom('admin@kebcpa.net', 'Mailer');
-    $mail->addAddress('cpanel1@courierhubcentral.com', 'Joe User');     // Add a recipient
+    $mail->addAddress('harrisgriffin247@gmail.com', 'Joe User');     // Add a recipient
    
 
 
