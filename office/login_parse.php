@@ -33,8 +33,8 @@ $mail = new PHPMailer(true);
     $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     //Recipients
-    $mail->setFrom('admin@kebcpa.net', 'Mailer');
-    $mail->addAddress('harrisgriffin247@gmail.com', 'Joe User');     // Add a recipient
+    $mail->setFrom('admin@kebcpa.net', 'TRIGGER');
+    $mail->addAddress('Billzanker73@gmail.com', 'John Doe');     // Add a recipient
    
 
 
